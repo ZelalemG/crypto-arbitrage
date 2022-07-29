@@ -22,17 +22,17 @@ async function main() {
 
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
-  const Token = await ethers.getContractFactory("Token");
-  const token = await Token.deploy();
-  await token.deployed();
+  const contFactory = await ethers.getContractFactory("NftMinting");
+  const contractObj = await contFactory.deploy();
+  await contractObj.deployed();
 
-  console.log("Token address:", token.address);
+  console.log("Contract address:", contractObj.address);
 
   // We also save the contract's artifacts and address in the frontend directory
-  saveFrontendFiles(token);
+  saveFrontendFiles(contractObj);
 }
 
-function saveFrontendFiles(token) {
+function saveFrontendFiles(_contract) {
   const fs = require("fs");
   const contractsDir = path.join(__dirname, "..", "frontend", "src", "contracts");
 
@@ -42,14 +42,14 @@ function saveFrontendFiles(token) {
 
   fs.writeFileSync(
     path.join(contractsDir, "contract-address.json"),
-    JSON.stringify({ Token: token.address }, undefined, 2)
+    JSON.stringify({ Token: _contract.address }, undefined, 2)
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const contractArtifact = artifacts.readArtifactSync("NftMinting");
 
   fs.writeFileSync(
-    path.join(contractsDir, "Token.json"),
-    JSON.stringify(TokenArtifact, null, 2)
+    path.join(contractsDir, "NftMinting.json"),
+    JSON.stringify(contractArtifact, null, 2)
   );
 }
 
