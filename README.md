@@ -1,4 +1,4 @@
-# NFT MINTING CONTRACT
+# CRYPTO ARBITRAGIN CONTRACT
 
 This repo is part of my tutorial demonestrating how we can build an arbitraging smart 
 contract which attempts to make a profit due to token price defferences among Uniswap 
