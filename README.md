@@ -1,12 +1,13 @@
 # NFT MINTING CONTRACT
 
-This repository contains a demonestration of how we can implement NFT minting
-smart contract using Openzeppelin and hardhat. Code is written in Solidity and
-tests are written in plain javascript using ethers.js, Mocha and Chai.
+This repo is part of my tutorial demonestrating how we can build an arbitraging smart 
+contract which attempts to make a profit due to token price defferences among Uniswap 
+and Sushiswap. The contract trys to take advantage of Flash loans on a specific token 
+from Uniswap LP of specific pair pool.
 
 This project is intended to be used as a learning reference for blockchain 
-developers followoing the tutorial in my blog (http://zillo.one/blog/nft-minting), but you should be
-able to follow it by yourself by reading the README and exploring its
+developers followoing the tutorial in my blog (http://zillo.one/blog/nft-minting), but 
+you should be able to follow it by yourself by reading the README and exploring its
 `contracts`, `tests`, `scripts` and 'config' files and directories.
 
 ## Quick start
@@ -15,7 +16,7 @@ The first things you need to do are cloning this repository and installing its
 dependencies:
 
 ```sh
-git clone https://github.com/ZelalemG/NFT-MINTING.git
+git clone https://github.com/ZelalemG/crypto-arbitrage.git
 cd NFT-MINTING
 npm install
 ```
